@@ -25,6 +25,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <!--Avatar-->
+            <ImageView
+                android:src="@drawable/avatar"
+                android:layout_marginBottom="20dp"
+                android:scaleType="centerInside"
+                android:layout_width="match_parent"
+                android:layout_height="180dp" />
+
             <!--Name -->
             <EditText
                 android:id="@+id/edtName"
@@ -33,13 +41,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-
-
             <!--User-->
             <EditText
                 android:id="@+id/edtUser"
                 android:inputType="text"
-                android:hint="User :"
+                android:hint="Email :"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
