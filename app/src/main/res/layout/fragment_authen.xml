@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AuthenFragment">
+
+    <!--WallPaper-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg5" />
+
+
+    <!--Content-->
+    <LinearLayout
+        android:padding="20dp"
+        android:background="#80FFFFFF"
+        android:layout_margin="50dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--Logo-->
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!--App Name-->
+        <TextView
+            android:textColor="#C2185B"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:text="Ung Picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!--User-->
+        <EditText
+            android:id="@+id/edtUser"
+            android:inputType="text"
+            android:hint="Email :"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!--Password-->
+        <EditText
+            android:id="@+id/edtPassword"
+            android:inputType="textPassword"
+            android:hint="Password :"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!--Controller-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--SignIn-->
+            <Button
+                android:id="@+id/btnSignIn"
+                android:text="Sign In"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <!--SignUp-->
+            <Button
+                android:id="@+id/btnSignUp"
+                android:text="Sign Up"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>

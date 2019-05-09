@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "14235362170",
+    "firebase_url": "https://ungpicture.firebaseio.com",
+    "project_id": "ungpicture",
+    "storage_bucket": "ungpicture.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:14235362170:android:f87a6916bb0d05d4",
+        "android_client_info": {
+          "package_name": "th.in.androidthai.ungpicture"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "14235362170-64q88rmmqevmltdaong73luhturktt03.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "th.in.androidthai.ungpicture",
+            "certificate_hash": "99f1de59cbbb9f0ab27aeb63c596235bc843b92a"
+          }
+        },
+        {
+          "client_id": "14235362170-8tt7c2tg4viesr2o3ieela5cp7291vge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyOpeyKdP63OqSk8hBBu2M8iv7CQovVHo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "14235362170-8tt7c2tg4viesr2o3ieela5cp7291vge.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
