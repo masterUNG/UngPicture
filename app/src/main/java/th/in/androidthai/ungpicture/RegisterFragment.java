@@ -15,6 +15,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 
@@ -25,6 +26,7 @@ public class RegisterFragment extends Fragment {
 
     private ImageView imageView;
     private Uri uri;
+    private boolean aBoolean = true;
 
 
     public RegisterFragment() {
@@ -50,6 +52,7 @@ public class RegisterFragment extends Fragment {
         if (resultCode == getActivity().RESULT_OK) {
 
             uri = data.getData();
+            aBoolean = false;
 
             try {
 
@@ -95,13 +98,31 @@ public class RegisterFragment extends Fragment {
 
     private void checkAndUpload() {
 
+        MyAlert myAlert = new MyAlert(getActivity());
+
+        EditText nameEditText = getView().findViewById(R.id.edtName);
+        EditText emailEditText = getView().findViewById(R.id.edtUser);
+        EditText passwordEditText = getView().findViewById(R.id.edtPassword);
+
+        String name = nameEditText.getText().toString().trim();
+        String email = emailEditText.getText().toString().trim();
+        String password = passwordEditText.getText().toString().trim();
+
+        if (aBoolean) {
+//            Non Choose Avatar
+            myAlert.normalDialog("Non Choose Avatar", "Please Choose Avatar");
+        } else if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
+            myAlert.normalDialog("Have Space", "Please Fill All Blank");
+        } else {
+
+        }
 
 
-    }
+    }   // checkAndUpload
 
     private void createToolbar() {
         Toolbar toolbar = getView().findViewById(R.id.toolbarRegister);
-        ((MainActivity)getActivity()).setSupportActionBar(toolbar);
+        ((MainActivity) getActivity()).setSupportActionBar(toolbar);
         ((MainActivity) getActivity()).getSupportActionBar().setTitle("Register");
         ((MainActivity) getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
         ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
