@@ -1,6 +1,7 @@
 package th.in.androidthai.ungpicture;
 
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -40,6 +41,7 @@ public class RegisterFragment extends Fragment {
     private ImageView imageView;
     private Uri uri;
     private boolean aBoolean = true;
+    private ProgressDialog progressDialog;
 
 
     public RegisterFragment() {
@@ -128,6 +130,11 @@ public class RegisterFragment extends Fragment {
             myAlert.normalDialog("Have Space", "Please Fill All Blank");
         } else {
 
+            progressDialog = new ProgressDialog(getActivity());
+            progressDialog.setTitle("Calculate Process");
+            progressDialog.setMessage("Please Wait Few Minus ...");
+            progressDialog.show();
+
 //            upload Avatar to Firebase
             FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
             StorageReference storageReference = firebaseStorage.getReference();
@@ -163,7 +170,9 @@ public class RegisterFragment extends Fragment {
                             String uid = firebaseAuth.getUid();
                             updateDatabase(uid, name, email);
                         } else {
+                            progressDialog.dismiss();
                             myAlert.normalDialog("Register False", task.getException().getMessage());
+
                         }
 
                     }
@@ -197,7 +206,9 @@ public class RegisterFragment extends Fragment {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        getActivity().getSupportFragmentManager().popBackStack();
+                        progressDialog.dismiss();
+                        startActivity(new Intent(getActivity(), ServiceActivity.class));
+                        getActivity().finish();
                     }
                 });
 

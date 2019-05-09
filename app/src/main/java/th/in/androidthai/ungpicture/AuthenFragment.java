@@ -1,6 +1,7 @@
 package th.in.androidthai.ungpicture;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 
 /**
@@ -29,6 +32,23 @@ public class AuthenFragment extends Fragment {
 
 
     }   // Main Method
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        if (firebaseAuth.getUid() != null) {
+//            State Login
+
+            startActivity(new Intent(getActivity(), ServiceActivity.class));
+
+        }
+
+
+
+    }
 
     private void signUpController() {
         Button button = getView().findViewById(R.id.btnSignUp);
