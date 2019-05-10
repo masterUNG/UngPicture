@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,8 +78,13 @@ public class FriendFragment extends Fragment {
 
                 }   // for
 
-                FriendAdapter friendAdapter = new FriendAdapter(getActivity(),iconStringArrayList,
-                        nameStringArrayList, emailStringArrayList);
+                FriendAdapter friendAdapter = new FriendAdapter(getActivity(), iconStringArrayList,
+                        nameStringArrayList, emailStringArrayList, new OnClickItem() {
+                    @Override
+                    public void onClickItem(View view, int position) {
+                        Log.d("9MayV1", "You click at position = " + position);
+                    }
+                });
                 recyclerView.setAdapter(friendAdapter);
 
 
