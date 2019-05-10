@@ -83,6 +83,18 @@ public class FriendFragment extends Fragment {
                     @Override
                     public void onClickItem(View view, int position) {
                         Log.d("9MayV1", "You click at position = " + position);
+
+                        getActivity()
+                                .getSupportFragmentManager()
+                                .beginTransaction()
+                                .replace(R.id.contentServiceFragment, UserFragment.userInstance(
+                                        nameStringArrayList.get(position),
+                                        emailStringArrayList.get(position),
+                                        iconStringArrayList.get(position)))
+                                .addToBackStack(null)
+                                .commit();
+
+
                     }
                 });
                 recyclerView.setAdapter(friendAdapter);
